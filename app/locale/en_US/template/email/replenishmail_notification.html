@@ -1,0 +1,45 @@
+<!--@It's almost time to re-order - "{{var product.name}}" @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"var product.name":"Product Name",
+"var product":"Product Html",
+"var related_products":"Related Product html"}
+@-->
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+.product-img-box {width:40%;float:left;}
+.related_products li{float: left;list-style: outside none none;width: 33%;margin-bottom: 15px;text-align: center;}
+@-->
+<body style="background:#F6F6F6; font-family: Arial, serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6;  font-family: Arial, serif; font-size:12px; margin:0; padding:0;">
+<table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%">
+    <tr>
+        <td align="center" valign="top" style="padding:20px 0 20px 0">
+            <!-- [ header starts here] -->
+            <table bgcolor="FFFFFF" cellspacing="0" cellpadding="10" border="0" width="800" style="border:1px solid #E0E0E0;">
+                <tr>
+                    <td valign="top" style="text-align: center;">
+                        <a href="{{store url=""}}" style="color:#1E7EC8;"><img style="margin: 1% 0px;" src="{{var logo_url}}" alt="{{var logo_alt}}" border="0"/></a>
+                        <p style="font-size:15px; line-height:16px; margin:16px 0 16px 0;  text-align: center;"><span style=" font-size: 25px;">Hey {{var customer_name}},</span><br/></p>
+                    </td>
+                </tr>
+                <!-- [ middle starts here] -->
+                <tr>
+                 <td valign="top" style="text-align: center;background: #F6F6F6;border: 16px solid #fff;border-radius: 16px;padding: 35px 10px;">
+                        {{var product}}
+                        <br/>
+                    </td>
+                </tr>
+                        {{var related_products}}
+                <tr>
+                    <td bgcolor="#EAEAEA" align="center" style="background:#EAEAEA; text-align:center;"><center><p style="font-size:12px; margin:0;">Thank you</p></center></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</div>
+
+</body>

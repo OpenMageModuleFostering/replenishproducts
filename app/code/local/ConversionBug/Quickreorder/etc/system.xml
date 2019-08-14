@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<conversionbug translate="label" module="quickreorder">
+            <label>Conversionbug</label>
+            <sort_order>100</sort_order>
+        </conversionbug>
+	  </tabs>
+	  <sections>
+		<quickreorder  translate="label" module="quickreorder">                    
+		<label>Quickreorder</label>
+        <tab>cbcore</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>100</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>
+			<groups>
+				<cb_info translate="label">
+							<label>Product By Zipcode</label>
+							<frontend_model>cbcore/system_config_info</frontend_model>
+							<frontend_type>text</frontend_type>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+				</cb_info>
+				      <general translate="label"> 
+					  <label>General</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>100</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Enabled/Disabled</comment>
+                          </status>
+					   </fields>
+					   </general>
+					</groups>
+		</quickreorder>
+	  </sections>
+</config>

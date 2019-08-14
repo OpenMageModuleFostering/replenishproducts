@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Conversionbug_Quickreorder>
+      <version>1.1.0</version>
+    </Conversionbug_Quickreorder>
+  </modules>
+  <global>
+    <helpers>
+      <quickreorder>
+        <class>Conversionbug_Quickreorder_Helper</class>
+      </quickreorder>
+    </helpers>
+	<blocks>
+	  <quickreorder>
+		<class>Conversionbug_Quickreorder_Block</class>
+	  </quickreorder>
+	</blocks>
+	<models>
+	  <quickreorder>
+		<class>Conversionbug_Quickreorder_Model</class>
+		<resourceModel>quickreorder_mysql4</resourceModel>
+	  </quickreorder>
+	  <quickreorder_mysql4>
+		<class>Conversionbug_Quickreorder_Model_Mysql4</class>
+		<entities>		  
+			  <quickreorder>
+				<table>conversion_quickreorder</table>
+			  </quickreorder>
+        </entities>
+	  </quickreorder_mysql4>
+	</models>
+	<resources>
+	  <quickreorder_setup>
+		<setup>
+		  <module>Conversionbug_Quickreorder</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </quickreorder_setup>
+	  <quickreorder_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </quickreorder_write>
+	  <quickreorder_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </quickreorder_read>
+	</resources>
+    <events>
+	  <checkout_onepage_controller_success_action> <!-- identifier of the event we want to catch -->
+        <observers>
+          <checkout_onepage_controller_success_action_handler> <!-- identifier of the event handler -->
+            <type>model</type> <!-- class method call type; valid are model, object and singleton -->
+            <class>quickreorder/observer</class> <!-- observers class alias -->
+            <method>orderLog</method>  <!-- observer's method to be called -->
+            <args></args> <!-- additional arguments passed to observer -->
+          </checkout_onepage_controller_success_action_handler>
+        </observers>
+      </checkout_onepage_controller_success_action>
+      <catalog_controller_product_view>
+        <observers>
+            <quickreorder>
+                <type>model</type>
+                <class>quickreorder/observer</class>
+                <method>viewProduct</method>
+            </quickreorder>
+        </observers>
+      </catalog_controller_product_view>
+      <catalog_product_delete_before>
+        <observers>
+            <quickreorder>
+                <type>model</type>
+                <class>quickreorder/observer</class>
+                <method>deleteProduct</method>
+            </quickreorder>
+        </observers>
+      </catalog_product_delete_before>
+      <customer_delete_before>
+        <observers>
+            <quickreorder>
+                <type>model</type>
+                <class>quickreorder/observer</class>
+                <method>deleteCustomer</method>
+            </quickreorder>
+        </observers>
+      </customer_delete_before>
+    </events>
+    <template>
+        <email>
+            <replenishmail_notification  module="quickreorder">
+                <label>Replenishmail Notification</label>
+                <file>replenishmail_notification.html</file>
+                <type>html</type>
+            </replenishmail_notification>
+        </email>
+    </template>
+  </global>
+  <admin>
+	<routers>
+	  <quickreorder>
+	    <use>admin</use>
+		<args>
+		  <module>Conversionbug_Quickreorder</module>
+		  <frontName>admin_quickreorder</frontName>
+		</args>
+	  </quickreorder>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <quickreorder module="quickreorder">
+		<title>Replenish Items</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <quickreorder module="quickreorder">
+		    <title>Manage Replenish Items</title>
+			<sort_order>0</sort_order>
+			<action>admin_quickreorder/adminhtml_quickreorder</action>
+		  </quickreorder>
+		</children>
+	  </quickreorder>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<quickreorder translate="title" module="quickreorder">
+			  <title>Quickreorder</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <quickreorder translate="title">
+			<title>Manage Replenish Items</title>
+			<sort_order>0</sort_order>
+		  </quickreorder>
+			  </children>
+			</quickreorder>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<quickreorder>
+		  <file>quickreorder.xml</file>
+		</quickreorder>
+	  </updates>
+	</layout>
+  </adminhtml>
+  <crontab>
+    <jobs>
+        <quickreorder>
+            <schedule>
+                <cron_expr>*/20 * * * * </cron_expr>
+            </schedule>
+            <run>
+                <model>quickreorder/observer::rePlenishEmail</model>
+            </run>
+        </quickreorder>
+    </jobs>
+  </crontab>
+</config> 

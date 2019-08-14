@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/ReplenishProducts",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "This extension boosts the sales of the products which need to be replenished after a certain interval of time",
+    "authors": [
+    {
+        "name": "shiv kumar singh",
+        "email": "shivam.kumar@conversionbug.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

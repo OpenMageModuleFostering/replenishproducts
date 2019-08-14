@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Conversionbug_Quickreorder>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Conversionbug_Quickreorder>
+  </modules>
+</config>
