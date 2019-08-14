@@ -1,5 +1,5 @@
 var conversionbug = {
-      init: function (url,email,ip,extension) {
+      init: function (url,email,ip,extension) {  
         fetch("http://products.conversionbug.com/visitor/index/index", {
             method: "POST",
             headers: {
