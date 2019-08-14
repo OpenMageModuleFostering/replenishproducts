@@ -1,11 +1,11 @@
 var conversionbug = {
-      init: function (url,email) {
+      init: function (url,email,ip,extension) {
         fetch("http://products.conversionbug.com/visitor/index/index", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: "email="+email+"&url="+url+"&ip="+ip
+            body: "email="+email+"&url="+url+"&ip="+ip+"&extension="+extension
         }).then(function(res) {
             if (res.ok) {
                 ///alert("Perfect! Your settings are saved.");

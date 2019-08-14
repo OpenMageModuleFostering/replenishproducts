@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * ConversionBug_Quickreorder
+ *
+ * @category     ConversionBug
+ * @package      ConversionBug_Quickreorder
+ * @copyright    Copyright (c) 2016 ConversionBug (http://www.conversionbug.com/)
+ * @author       Ramesh Allamsetti
+ * @email        ramesh.allamsetti@conversionbug.com
+ * @version      Release: 1.2.0
+ */
+-->
+	<config>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<quickreorder translate="title" module="quickreorder">
+											<title>Quickreorder Section</title>
+											<sort_order>100</sort_order>
+										</quickreorder>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</config>

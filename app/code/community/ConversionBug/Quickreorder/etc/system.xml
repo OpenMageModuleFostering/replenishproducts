@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * ConversionBug_Quickreorder
+ *
+ * @category     ConversionBug
+ * @package      ConversionBug_Quickreorder
+ * @copyright    Copyright (c) 2016 ConversionBug (http://www.conversionbug.com/)
+ * @author       Ramesh Allamsetti
+ * @email        ramesh.allamsetti@conversionbug.com
+ * @version      Release: 1.2.0
+ */
+-->
+<config>
+	  <tabs>
+		<conversionbug translate="label" module="quickreorder">
+            <label>ConversionBug</label>
+            <sort_order>12</sort_order>
+        </conversionbug>
+	  </tabs>
+	  <sections>
+		<quickreorder  translate="label" module="cbcore">
+		<label>Quickreorder</label>
+		<tab>cbcore</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>100</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <general translate="label"> 
+					  <label>General</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>100</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Enabled/Disabled</comment>
+                          </status>
+					   </fields>
+					   </general>
+					</groups>
+		</quickreorder>
+	  </sections>
+</config>

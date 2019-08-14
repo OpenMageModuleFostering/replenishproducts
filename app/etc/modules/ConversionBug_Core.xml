@@ -26,7 +26,7 @@
     <modules>
         <ConversionBug_Core>
             <active>true</active>
-            <codePool>local</codePool>
+            <codePool>community</codePool>
         </ConversionBug_Core>
     </modules>
 </config>

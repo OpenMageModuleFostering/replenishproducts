@@ -1,0 +1,41 @@
+<?php
+    $product = $this->getProduct();
+     $collection = $product->getRelatedLinkCollection()->setPageSize(6)
+            ->setCurPage(1);
+    if($collection->count()):
+?>
+<tr>
+  <td valign="top" style="text-align: center; background: #F6F6F6; border: 16px solid #fff; border-radius: 16px; padding: 35px 10px; margin: 0 auto;max-width: 700px;">
+<p style="font-size: 15px; line-height: 16px; margin: 0 0 16px 0; text-align: center;"><?php echo $this->__('We also have great deals available on products that you may like to buy.');?></p>
+<div class="clear"></div>
+<div class="related_products">
+    <ul class="product_list" style="margin: 0 auto; max-width: 700px;">
+    <?php
+   
+        foreach ($collection as $link) {
+            $model = Mage::getModel('catalog/product') ;//getting product model
+            $_product = $model->load($link->getLinkedProductId()); ?> 
+            <li style="list-style: outside none none; width: 200px; float: left; margin-bottom: 15px;text-align: center;">
+                <div class="product-img">
+                    <a href="<?php echo $_product->getProductUrl(); ?>">
+                
+<img  style="max-height:227px;"  src="<?php echo Mage::getModel('catalog/product_media_config')
+                 ->getMediaUrl($_product->getSmallImage()); ?>"/>
+                  
+                    </a>
+                </div>
+                <h3 style="font-size: 15px;line-height:20px; margin-top: 10px; font-family: Arial, Helvetica, sans-serif; font-weight: 300; color: #2c2c2c; text-decoration: none;  display: block; margin: 8px 15px; text-transform: capitalize;   border-bottom: 1px solid #000;
+  padding: 8px 0px 22px 0px;  max-height: 18px; overflow: hidden;"><?php echo $_product->getName(); ?></h3>
+            <span style="clear: both; display: inherit; color: #424242; font-size: 16px; font-weight: bold; margin: 15px 0px;"> <?php echo $_product->getSpecialPrice()?Mage::helper('core')->currency($_product->getSpecialPrice()):Mage::helper('core')->currency($_product->getPrice())  ?></span>  
+                <?php //if ($_product->isSaleable()): ?>
+                    <a style="background: #005587; border: 1px solid #0a3151; font-family: Helvetica, Arial, sans-serif; text-decoration: none; color: #ffffff; font-size: 13px; font-weight: normal; text-transform: uppercase; text-align: center; display: inline-block; padding: 8px 10px;" class="button" href="<?php echo $_product->getProductUrl();  ?>"><span><span><?php echo $this->__('Buy Now') ?></span></span></a><hr style="margin: 10% 0; border-color: #cecece;">
+
+                <?php //endif; ?>
+            </li>
+    <?php }
+    ?>
+    </ul>
+</div>
+</td>
+                </tr>
+<?php endif; ?>

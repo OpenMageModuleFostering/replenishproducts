@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ConversionBug_Core
+ *
+ * @category     ConversionBug
+ * @package      ConversionBug_Core
+ * @copyright    Copyright (c) 2016 ConversionBug (http://www.conversionbug.com/)
+ * @author       Ramesh Allamsetti
+ * @email        ramesh.allamsetti@conversionbug.com
+ * @version      Release: 1.2.0
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <all>Allow everything</all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <cbstore translate="title" module="cbcore">
+                                        <title>CB Extensions</title> 
+                                        <sort_order>60</sort_order>
+                                    </cbstore>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

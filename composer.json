@@ -3,11 +3,11 @@
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
-    "description": "This extension boosts the sales of the products which need to be replenished after a certain interval of time",
+    "description": "Reminder Email for Refilling the Products",
     "authors": [
     {
-        "name": "shiv kumar singh",
-        "email": "shivam.kumar@conversionbug.com"
+        "name": "Ramesh Allamestti",
+        "email": "ramesh.allamsetti@conversionbug.com"
     }
 ],
     "suggest": {

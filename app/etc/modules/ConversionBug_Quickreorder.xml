@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
   <modules>
-    <Conversionbug_Quickreorder>
+    <ConversionBug_Quickreorder>
       <active>true</active>
-      <codePool>local</codePool>
-    </Conversionbug_Quickreorder>
+      <codePool>community</codePool>
+    </ConversionBug_Quickreorder>
   </modules>
 </config>

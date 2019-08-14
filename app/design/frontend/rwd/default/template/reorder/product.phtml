@@ -1,0 +1,27 @@
+<?php
+$_product = $this->getProduct();
+?>
+
+<div class="product-essential">
+    <div class="product-img-box" style="width:50%;float:left; margin: 30px 0 10px 0;">
+        <a href="<?php echo $_product->getProductUrl(); ?>">
+            <img style="width:200px;"src="<?php echo Mage::getModel('catalog/product_media_config')
+                 ->getMediaUrl($_product->getSmallImage()); ?>"/>
+        </a>
+    </div>
+    <div class="product-shop" style="width:50%;float:right;">
+   <h3 class="product-name" style="color: #004371; font-size: 24px; font-weight: 300; line-height: 28px; margin: 30px 0 10px 0; text-align: left;
+  font-family: Arial, Helvetica, sans-serif;"><?php echo $_product->getName(); ?></h3>
+
+        <div class='short-description' style="max-height: 75px; overflow: hidden; text-overflow: ellipsis; max-width: 465px; font-family: Arial; font-weight: 300; line-height: 20px; text-align: left; font-size: 14px; color: #333333;"><?php echo $this->__('Running low on %s?. You can replenish in advance to avoid last moment purchase. Click below to buy now.',$_product->getName());?></div>
+
+        <div class='divider'></div>
+
+        <div class="col2-set">
+            <div class="col-2">
+                    <a style="  background: #007fb8; color: #ffffff; border: #004b91 solid 1px;   padding: 8px 0 8px 0; text-decoration: none; text-align: center; display: block; width: 70%;   font-size: 22px;   font-weight: 300;  margin: 15px auto; border-radius: 5px;" class="button" href="<?php echo $_product->getProductUrl();  ?>"><span><span><?php echo $this->__('Replenish') ?></span></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
