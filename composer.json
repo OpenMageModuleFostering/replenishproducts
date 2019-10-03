@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/ReplenishProducts",
+    "name": "OpenMageModuleFostering\/ReplenishProducts",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "Reminder Email for Refilling the Products",
     "authors": [
-    {
-        "name": "Ramesh Allamestti",
-        "email": "ramesh.allamsetti@conversionbug.com"
-    }
-],
+        {
+            "name": "Ramesh Allamestti",
+            "email": "ramesh.allamsetti@conversionbug.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
