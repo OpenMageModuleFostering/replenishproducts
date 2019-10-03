@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/ReplenishProducts",
+    "name": "openmage-module-fostering\/replenishproducts",
     "type": "magento-module",
-    "license": "OSL-v3.0",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Reminder Email for Refilling the Products",
     "authors": [
